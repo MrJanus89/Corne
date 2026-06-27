@@ -46,28 +46,28 @@
 
                 lower_layer {
 // ----------------------------------------------------------------------------------------- 
-// |      |  F1  |  F2  |  F3  | F10  |     |  [{  | HOME |  UP  | PGUP |  ]}  |
+// | TAB  |  F1  |  F2  |  F3  | F10  |     |  [{  | HOME |  UP  | PGUP |  ]}  |
 // | CAPS |  F4  |  F5  |  F6  | F11  |     |  (   | LEFT | DOWN | RGHT |  )   |
-// | LSFT |  F7  |  F8  |  F9  | F12  |     |      | END  |  \|  | PGDN |  '"  |
+// | LSFT |  F7  |  F8  |  F9  | F12  |     | `~   | END  |  \|  | PGDN |  '"  |
 //               | LGUI |      | TAB  |     | LALT | ESC  | LCTL |
                         display-name = "Lower";
                         bindings = <
-   &trans 	    &kp F1      &kp F2		&kp F3     &kp F10	        AS(LBKT)	&kp HOME  &kp UP         &kp PG_UP   AS(RBKT)
+   &kp TAB 	    &kp F1      &kp F2		&kp F3     &kp F10	        AS(LBKT)	&kp HOME  &kp UP         &kp PG_UP   AS(RBKT)
    &kp CAPS		&kp F4      &kp F5      &kp F6     &kp F11		    &kp LS(N9)	&kp LEFT  &kp DOWN       &kp RIGHT   &kp LS(N0)	
-   &kp LSHFT	&kp F7      &kp F8      &kp F9	   &kp F12          &trans 		&kp END   AS(BSLH)       &kp PG_DN   AS(SQT)
+   &kp LSHFT	&kp F7      &kp F8      &kp F9	   &kp F12          AS(GRAVE)	&kp END   AS(BSLH)       &kp PG_DN   AS(SQT)
                              &kp LGUI   &trans     &kp TAB       	&kp LALT   	&kp ESC   &kp LCTRL
                         >;
                 };
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// | `~   | 1!   | 2@   | 3#   | 0)   |     |      | PSCR | SLCK | PAUS |      |
+// | TAB  | 1!   | 2@   | 3#   | 0)   |     |      | PSCR | SLCK | PAUS |      |
 // | CAPS | 4$   | 5%   | 6^   | -_   |     |S-SAVE| TAB  | LALT |S-TAB | CAD  |
 // | LSFT | 7&   | 8*   | 9(   | =+   |     | C-A  | C-C  | C-X  | C-V  | C-Z  |
 //               | LGUI | ESC  | TAB  |     | LALT |      | LCTL |
                         display-name = "Raise";
                         bindings = <
-   AS(GRAVE) 	AS(N1)		AS(N2)    	AS(N3)    	AS(N0)        	&trans  		&kp PSCRN		&kp SLCK	&kp PAUSE_BREAK	&kp LA(F4)
+   &kp TAB 		AS(N1)		AS(N2)    	AS(N3)    	AS(N0)        	&trans  		&kp PSCRN		&kp SLCK	&kp PAUSE_BREAK	&kp LA(F4)
    &kp CAPS	 	AS(N4)		AS(N5)		AS(N6)	  	AS(MINUS) 		&kp LC(LS(S))	&kp TAB			&kp LALT	&kp LS(TAB)		&kp LC(LA(DEL))
    &kp LSHFT 	AS(N7)		AS(N8)		AS(N9)    	AS(EQUAL)  		&kp LC(A)		&kp LC(C)		&kp LC(X)	&kp LC(V)		&kp LC(Z)
 							&kp LGUI  	&kp ESC   	&kp TAB    		&kp LALT  		&trans    		&kp LCTRL
