@@ -67,11 +67,10 @@
 // 			| LGUI| ESC | SPC | 	| ENT 	| 		| TAB 	|
                         display-name = "Raise";
                         bindings = <
-
    AS(GRAVE) AS(N1)		AS(N2)    	AS(N3)    AS(N0)        &trans  		&kp PSCR		&kp SLCK	&kp PAUS		&trans
    &trans    AS(N4)		AS(N5)		AS(N6)	  AS(MINUS) 	&kp LC(LS(S))	&kp TAB			&kp LALT	&kp LS(TAB)		&kp LC(LA(DEL))
    &trans    AS(N7)		AS(N8)		AS(N9)    AS(EQUAL)   	&kp LC(A)		&kp LC(C)		&kp LC(X)	&kp LC(V)		&kp LC(Z)
-                       &kp LGUI  &kp ESC   &kp SPACE     AS(RET)   &trans    &kp TAB
+                       &kp LGUI  &kp ESC   &kp SPACE     	AS(RET)  		&trans    		&kp TAB
                         >;
                 };
 
