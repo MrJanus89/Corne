@@ -30,11 +30,11 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-// -----------------------------------------------------------------------------------------
-// |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U   |  I   |  O   | P |
-// |  A  |  S  |  D  |  F  |  G  |     |  H  |  J   |  K   |  L   | ' | 
-// |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M   | CTRL | META | . |
-//             | GUI | LWR | SPC |     | ENT | RSE  | BSPC |
+// ----------------------------------------------------------------------------------------- 
+// | Q | W | E | R | T | 		| Y | U | I | O | P | 
+// | A | S | D | F | G | 		| H | J | K | L | ;: | 
+// | Z | X | C | V | B |		| N | M | ,< | .> | /? | 
+//   | RALT| LWR | SPC | 		| ENT | RSE | BSPC|
                         display-name = "Base";
                         bindings = <
    AS(Q) AS(W) AS(E) AS(R) AS(T)     AS(Y)   AS(U)  AS(I)     AS(O)     AS(P)
@@ -45,30 +45,30 @@
                 };
 
                 lower_layer {
-// -----------------------------------------------------------------------------------------
-// | !     |  @  |  #  |  $  |  %  |     |HOME |  UP | UP  |HOME|PG_UP|
-// | BT1   | BT2 | BT3 | BT4 | BT5 |     |End  | LFT | DOWN|RGT |PG_DN|
-// | BTCLR |     |     |     |     |     |     |     |     |    |     |
-//               | GUI |     | SPC |     | ENT | ESC | TAB |
+// ----------------------------------------------------------------------------------------- 
+// | TAB | F1 | F2 | F3  | F10 | 		| ]} | HOME | UP | PGUP | [{ | 
+// | CAPS | F4 | F5 | F6 | F11 |		| ( | LEFT | DOWN | RGHT | ) | 
+// | LSFT | F7 | F8 | F9 | F12 | 		| | END | | PGDN | '" | 
+//			| LGUI|		 | SPC | 		| ENT | ESC | BSPC|
                         display-name = "Lower";
                         bindings = <
-   &kp TAB	    &kp F1       &kp F2		  &kp F3       &kp F10	        &kp INSERT	&kp HOME  &kp UP         &kp PG_UP   &kp PG_UP
-   &kp CAPS		&kp F4       &kp F5       &kp F6       &kp F11		    &kp DELETE	&kp LEFT  &kp DOWN       &kp RIGHT   &kp PG_DN
-   &kp LSHFT	&kp F7       &kp F8       &kp F9	   &kp F12          &trans 		&kp END   &trans         &kp PG_DN   &trans 
+   &kp TAB	    &kp F1       &kp F2		  &kp F3       &kp F10	        AS(RBKT)	&kp HOME  &kp UP         &kp PG_UP   AS(LBKT)
+   &kp CAPS		&kp F4       &kp F5       &kp F6       &kp F11		    &kp LS(N9)	&kp LEFT  &kp DOWN       &kp RIGHT   &kp LS(N0)	
+   &kp LSHFT	&kp F7       &kp F8       &kp F9	   &kp F12          &trans 		&kp END   &trans         &kp PG_DN   AS(SQT)
                              &kp LGUI     &trans       &kp SPACE        AS(RET)   	&kp ESC   &kp BSPC
                         >;
                 };
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// | 1! |  2@ |  3# |  4$ |  5% |     |  6^ |  7& |  8* |  9(  |  0)  |
-// | -_ |  =+ |  {  |  [  |  (  |     |  )  |  ]  |  }  |  /?  |  \|  |
-// | `~ |     |     |  ,< |  :  |     |  ;  |  .> | CTRL| META |      |
-//            | GUI | ESC | SPC |     | ENT |     | TAB |
+// | `~ | 1! | 2@ | 3# | 0) |		|		| PSCR 	| SLCK 	| PAUS 	|		| 
+// | 	| 4$ | 5% | 6^ | -_ | 		|S-SAVE	| TAB 	| LALT 	| S-TAB	|CAD	| 
+// | 	| 7& | 8* | 9( | =+ | 		| C-A 	| C-C 	| C-X 	| C-V 	| C-Z 	| 
+// 			| LGUI| ESC | SPC | 	| ENT 	| 		| TAB 	|
                         display-name = "Raise";
                         bindings = <
 
-   AS(GRAVE) AS(N1)		AS(N2)    	AS(N3)    AS(N0)        &trans  		&trans			&trans		&trans			&trans
+   AS(GRAVE) AS(N1)		AS(N2)    	AS(N3)    AS(N0)        &trans  		&kp PSCR		&kp SLCK	&kp PAUS		&trans
    &trans    AS(N4)		AS(N5)		AS(N6)	  AS(MINUS) 	&kp LC(LS(S))	&kp TAB			&kp LALT	&kp LS(TAB)		&kp LC(LA(DEL))
    &trans    AS(N7)		AS(N8)		AS(N9)    AS(EQUAL)   	&kp LC(A)		&kp LC(C)		&kp LC(X)	&kp LC(V)		&kp LC(Z)
                        &kp LGUI  &kp ESC   &kp SPACE     AS(RET)   &trans    &kp TAB
