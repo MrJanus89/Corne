@@ -17,23 +17,24 @@
     };
 
     behaviors {
-        as: auto_shift {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping_term_ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-		 hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping_term-msterm-ms = <200>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <125>;
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
-		};
+					as: auto_shift {
+				compatible = "zmk,behavior-hold-tap";
+				#binding-cells = <2>;
+				tapping-term-ms = <200>;
+				quick-tap-ms = <0>;
+				flavor = "tap-preferred";
+				bindings = <&kp>, <&kp>;
+			};
+
+			hm: homerow_mods {
+				compatible = "zmk,behavior-hold-tap";
+				#binding-cells = <2>;
+				tapping-term-ms = <200>;
+				quick-tap-ms = <175>;
+				require-prior-idle-ms = <125>;
+				flavor = "balanced";
+				bindings = <&kp>, <&kp>;
+			};
     };
         keymap {
                 compatible = "zmk,keymap";
@@ -76,7 +77,7 @@
 //               | LGUI | ESC  | TAB  |     | LALT |      | LCTL |
                         display-name = "Raise";
                         bindings = <
-   &trans 		AS(N1)			AS(N2)    		AS(N3)  		AS(N0)        	&kp LC(F4) 		&kp PSCRN		&kp SLCK		&kp PAUSE_BREAK	&kp LA(F4)
+   &trans 		AS(N1)			AS(N2)    		AS(N3)  		AS(N0)        	&kp LC(F4) 		&kp PSCR		&kp SLCK		&kp PAUS		&kp LA(F4)
    &kp LGUI 	&hm LALT N4		&hm LCTRL N5 	&hm LSHFT N6	AS(MINUS)   	&kp LS(N9) 		&hm RSHFT LEFT 	&hm RCTRL DOWN &hm RALT RIGHT 	&hm RGUI N0
    &trans 		AS(N7)			AS(N8)			AS(N9)    		AS(EQUAL)  		&kp LC(A)		&kp LC(C)		&kp LC(X)		&kp LC(V)		&kp LC(Z)
 						&kp DEL  	&kp ESC   	&kp LALT   		&kp LCTRL  		&trans    		&kp RGUI
