@@ -25,6 +25,15 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+		 hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping_term-msterm-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <125>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+		};
     };
         keymap {
                 compatible = "zmk,keymap";
@@ -37,10 +46,10 @@
 // 	             | RALT | LWR  | SPC  |     | ENT  | RSE  | BSPC |
                         display-name = "Base";
                         bindings = <
-   AS(Q) AS(W) AS(E) AS(R) AS(T)     AS(Y)   AS(U)  AS(I)     AS(O)     AS(P)
-   AS(A) AS(S) AS(D) AS(F) AS(G)     AS(H)   AS(J)  AS(K)     AS(L)     AS(SEMI)
-   AS(Z) AS(X) AS(C) AS(V) AS(B)     AS(N)   AS(M)  AS(COMMA) AS(DOT)  	AS(FSLH)
-        &kp RALT &mo 1 &kp SPACE     AS(RET) &mo 2  &kp BSPC
+   AS(Q) 		AS(W) 		AS(E) 		AS(R) 		AS(T)     AS(Y)   	AS(U)  			AS(I)		    	AS(O)     		AS(P)
+   &hm LGUI A 	&hm LALT S 	&hm LCTRL D &hm LSHFT F AS(G)     AS(H) 	&hm RSHFT J 	&hm RCTRL K 		&hm RALT L 		&hm RGUI SEMI
+   AS(Z) 		AS(X) 		AS(C) 		AS(V) 		AS(B)     AS(N)   	AS(M)  			AS(COMMA) 			AS(DOT)		  	AS(FSLH)
+        &kp DEL &mo 1 &kp SPACE     AS(RET) &mo 2  &kp BSPC
                         >;
                 };
 
@@ -52,10 +61,10 @@
 //               | LGUI |      | TAB  |     | LALT | ESC  | LCTL |
                         display-name = "Lower";
                         bindings = <
-   &kp TAB 	    &kp F1      &kp F2		&kp F3     &kp F10	        AS(LBKT)	&kp PG_UP &kp UP         &kp PG_DN	 AS(RBKT)
-   &kp CAPS		&kp F4      &kp F5      &kp F6     &kp F11		    &kp LS(N9)	&kp LEFT  &kp DOWN       &kp RIGHT   &kp LS(N0)	
-   &kp LSHFT	&kp F7      &kp F8      &kp F9	   &kp F12          AS(GRAVE)	&kp HOME  AS(BSLH)       &kp END  	 AS(SQT)
-                             &kp LGUI   &trans     &kp LALT       	&kp LCTRL  	&kp ESC   &kp RGUI
+    &trans 	    &kp F1      &kp F2		&kp F3     &kp F10	        	AS(LBKT)	&kp PG_UP 		&kp UP         &kp PG_DN	 	AS(RBKT)
+    &kp LGUI 	&hm LALT F4 &hm LCTRL F5 &hm LSHFT F6 &kp F11   		&kp LS(N9) 	&hm RSHFT LEFT 	&hm RCTRL DOWN &hm RALT RIGHT 	&hm RGUI LS(N0)
+	&trans		&kp F7      &kp F8      &kp F9	   &kp F12        		AS(GRAVE)	&kp HOME  		AS(BSLH)       &kp END  	 	AS(SQT)
+                             &kp DEL   &trans     &kp LALT       	&kp LCTRL  	&kp ESC   &kp RGUI
                         >;
                 };
 
@@ -67,10 +76,10 @@
 //               | LGUI | ESC  | TAB  |     | LALT |      | LCTL |
                         display-name = "Raise";
                         bindings = <
-   &kp TAB 		AS(N1)		AS(N2)    	AS(N3)    	AS(N0)        	&kp LC(F4) 		&kp PSCRN		&kp SLCK	&kp PAUSE_BREAK	&kp LA(F4)
-   &kp CAPS	 	AS(N4)		AS(N5)		AS(N6)	  	AS(MINUS) 		&kp LC(LS(S))	&kp TAB			&kp LALT	&kp LS(TAB)		&kp LC(LA(DEL))
-   &kp LSHFT 	AS(N7)		AS(N8)		AS(N9)    	AS(EQUAL)  		&kp LC(A)		&kp LC(C)		&kp LC(X)	&kp LC(V)		&kp LC(Z)
-							&kp LGUI  	&kp ESC   	&kp LALT   		&kp LCTRL  		&trans    		&kp RGUI
+   &trans 		AS(N1)			AS(N2)    		AS(N3)  		AS(N0)        	&kp LC(F4) 		&kp PSCRN		&kp SLCK		&kp PAUSE_BREAK	&kp LA(F4)
+   &kp LGUI 	&hm LALT N4		&hm LCTRL N5 	&hm LSHFT N6	AS(MINUS)   	&kp LS(N9) 		&hm RSHFT LEFT 	&hm RCTRL DOWN &hm RALT RIGHT 	&hm RGUI N0
+   &trans 		AS(N7)			AS(N8)			AS(N9)    		AS(EQUAL)  		&kp LC(A)		&kp LC(C)		&kp LC(X)		&kp LC(V)		&kp LC(Z)
+						&kp DEL  	&kp ESC   	&kp LALT   		&kp LCTRL  		&trans    		&kp RGUI
                         >;
                 };
 
